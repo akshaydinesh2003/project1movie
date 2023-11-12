@@ -1,0 +1,196 @@
+/* Reset some default browser styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Georgia', serif; /* Use a serif font for a classic theater feel */
+    background-color: #111; /* Dark background color reminiscent of a theater ambiance */
+    color: #fff; /* Text color for good contrast */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 15px 15px; /* Increase the top and bottom padding for extra space */
+    height: 60px; /* Increase the header's height */
+}
+
+.header-left {
+    flex: 1;
+}
+
+.header-left img {
+    max-width: 120px; /* Make the logo a bit larger */
+    height: auto;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-right input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    background-color: #222;
+    color: #fff;
+}
+
+.header-right button {
+    background-color: #0078d4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+main {
+    margin: 20px;
+}
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    align-items: center;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-slide img {
+    width: 100%;
+    max-height: 850px;
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+}
+
+.movie-card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.movie-card p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.movie-card .reserve-button {
+    background: #0078d4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+#movie-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-top: 20px; /* Spacing between the carousel and movie cards */
+}
+
+.movie-card {
+    background: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 20px; /* Increase the padding for larger cards */
+    width: 250px; /* Increase the width for larger cards */
+    text-align: center;
+    margin-right: 20px; /* Spacing between movie cards */
+}
+
+.movie-card:last-child {
+    margin-right: 0; /* Remove the margin from the last movie card */
+}
+
+#movie-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    min-height: 60vh;
+    position: relative;
+    overflow: hidden; /* Hide overflowing content for smooth animation */
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; /* Adjust arrow width */
+    cursor: pointer;
+}
+
+.left-arrow {
+    left: 0;
+    z-index: 1;
+}
+
+.right-arrow {
+    right: 0;
+    z-index: 1;
+}
+
+/* Style the arrow images as needed */
+.arrow img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+#movie-cards {
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth transition animation */
+}

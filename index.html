@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- You'll need to create a separate CSS file for styling -->
+    <title>Movie Ticket Reservation</title>
+    <script src="carousel.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+        <img src="company_logo.png" alt="Company Logo">
+    </div>
+    <div class="header-right">
+        <input type="text" placeholder="Search...">
+        <a href="./login.html"><button id="login-button">Login</button></a>
+        <a href="./register.html"><button id="signup-button">Sign Up</button></a>
+    </div>
+</header>
+
+
+    <main>
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="./images/4k-Wallpaper-Cool-2048x1152.jpg" alt="Image 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="./images/astronaut-152023.png" alt="Image 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="./images/pexels-photo-3832475.jpeg" alt="Image 3">
+                </div>
+                <!-- Add more carousel slides as needed -->
+            </div>
+            <button class="carousel-prev">&#9665;</button> <!-- Left arrow button -->
+            <button class="carousel-next">&#9655;</button> <!-- Right arrow button -->
+        </div>
+        
+        <div id="movie-cards-container">
+            <div class="arrow left-arrow">
+                <img src="left-arrow.png" alt="Left Arrow">
+            </div>
+            <div id="movie-cards">
+                <div class="movie-card mov1">
+                    <img src="movie1.jpg" alt="Movie 1">
+                    <h2>Movie Title 1</h2>
+                    <p>Release Date: January 1, 2023</p>
+                    <p>Genre: Action</p>
+                    <button class="reserve-button">Reserve</button>
+                </div>
+            
+                <div class="movie-card">
+                    <img src="movie2.jpg" alt="Movie 2">
+                    <h2>Movie Title 2</h2>
+                    <p>Release Date: February 15, 2023</p>
+                    <p>Genre: Drama</p>
+                    <button class="reserve-button">Reserve</button>
+                </div>
+    
+                <div class="movie-card">
+                  <img src="movie2.jpg" alt="Movie 2">
+                  <h2>Movie Title 2</h2>
+                  <p>Release Date: February 15, 2023</p>
+                  <p>Genre: Drama</p>
+                  <button class="reserve-button">Reserve</button>
+                </div>
+    
+                <div class="movie-card">
+                  <img src="movie2.jpg" alt="Movie 2">
+                  <h2>Movie Title 2</h2>
+                  <p>Release Date: February 15, 2023</p>
+                  <p>Genre: Drama</p>
+                  <button class="reserve-button">Reserve</button>
+                </div>
+    
+                <div class="movie-card">
+                  <img src="movie2.jpg" alt="Movie 2">
+                  <h2>Movie Title 2</h2>
+                  <p>Release Date: February 15, 2023</p>
+                  <p>Genre: Drama</p>
+                  <button class="reserve-button">Reserve</button>
+                </div>
+            
+                <!-- Add more movie cards as needed -->
+            </div>
+            <div class="arrow right-arrow">
+                <img src="right-arrow.png" alt="Right Arrow">
+            </div>
+        </div>   
+    </main>
+
+    <footer>
+        <!-- You can include some additional information or links in the footer -->
+    </footer>
+    <script>
+        // Function to reserve a seat
+        function reserveSeat(seatId) {
+            fetch(`/reserve-seat/${seatId}`, { method: 'POST' })
+                .then(response => {
+                    if (response.status === 200) {
+                        // Seat reserved successfully, update UI
+                        document.getElementById(seatId).style.backgroundColor = 'green';
+                    } else {
+                        // Handle errors
+                        console.error('Error reserving seat');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+    
+</body>
+</html>

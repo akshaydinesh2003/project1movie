@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>User Registration</title>
+</head>
+<body>
+
+  <h2>User Registration</h2>
+
+  <form id="registrationForm" action="http://localhost:3000/register" method="post">
+    <label for="username">Username:</label>
+    <input type="text" name="username" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" required><br>
+
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" name="confirmPassword" required><br>
+
+    <input type="submit" value="Register">
+  </form>
+
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function() {
+      // Redirect to the login page when the form is submitted
+      window.location.href = "/login";
+    });
+  </script>
+
+</body>
+</html> 
